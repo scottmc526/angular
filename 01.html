@@ -7,7 +7,12 @@
       // Challenge #1
       // on page load
       // log the pizza-size input element using document.querySelector
-
+      document.addEventListener('DOMContentLoaded', function () {
+        document.querySelector('#pizza-size').addEventListener('keyup', function (e) {
+          window.pizzaSize = e.value
+          console.log(e.value);
+        })
+      })
       // Challenge #2
       // on page load
       // add an event listener to the pizza-size input that listens for keyup events
@@ -18,9 +23,9 @@
       // when a user types into the input, update the display-size span
       // with the value of window.pizzaSize
       // this binds span to the value of the input
-      document.addEventListener('DOMContentLoaded', function () {
-        console.log(document.querySelector('#pizza-size'))
-      })
+      // document.addEventListener('DOMContentLoaded', function () {
+      //   console.log(document.querySelector('#pizza-size'))
+      // })
 
     </script>
   </head>
