@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
   <head>
     <meta charset="utf-8">
     <title>My first angular app</title>
     <script type="text/javascript" src='https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.0-rc.2/angular.js'>
     </script>
+    <script type="text/javascript" src='index.js'></script>
   </head>
   <body>
-
+  <input type="text" ng-model='mirror' placeholder="INPUT">
+    <p>
+      {{mirror | }}
+    </p>
   </body>
 </html>
