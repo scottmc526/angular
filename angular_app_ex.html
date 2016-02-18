@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app='scott'>
   <head>
     <meta charset="utf-8">
     <title>My first angular app</title>
@@ -7,10 +7,27 @@
     </script>
     <script type="text/javascript" src='index.js'></script>
   </head>
-  <body>
-  <input type="text" ng-model='mirror' placeholder="INPUT">
+  <body ng-controller='myController'>
     <p>
-      {{mirror | }}
+      Search for controller
+      <input type="text" ng-model='searchable.name'>
+    </p>
+    <button type='submit' ng-click='showForm=true'>Add a contractor</button>
+    <div ng-show='showForm'>
+      <form ng-submit='getContractor()'>
+        <input type="text" ng-model='name'>
+        <input type="text" ng-model='rate'>
+          <input type="submit" ng-click='showForm=false'  value='{{buttonValue}}'>
+      </form>
+    </div>
+    <p>
+      <div ng-repeat='contractor in contractors | filter:searchable'>
+
+        <p>{{contractor.name}}</p>
+        <p>{{contractor.rate | currency}}</p>
+        <div ng-show='contractor.rate > 99'>This rate is high</div>
+        <hr>
+      </div>
     </p>
   </body>
 </html>
